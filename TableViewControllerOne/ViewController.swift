@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         let splitVC = UISplitViewController(style: .doubleColumn)
         
         let secondVC = UIViewController()
-        secondVC.title = ""
+        secondVC.title = "Split 2"
         secondVC.view.backgroundColor = .systemBlue
         
         splitVC.viewControllers = [ UINavigationController(rootViewController: MenuController(style: .plain)), UINavigationController(rootViewController: secondVC)
@@ -72,7 +72,7 @@ class MenuController: UITableViewController{
     
     override init(style: UITableView.Style) {
         super.init(style: style)
-        title = "Menu"
+        title = "Split 1"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -87,7 +87,8 @@ class MenuController: UITableViewController{
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = "Option \(indexPath.row)"
+        cell?.textLabel?.text = "Option"
         return cell!
-}
+    }
+    
 }
